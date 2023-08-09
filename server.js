@@ -8,7 +8,8 @@ import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import cartRoute from "./routes/cartRoute.js"
 import paymentRoutes from "./routes/paymentRoute.js";import cors from "cors";
-import {path,dirname} from 'path';
+import path from 'path';
+import { dirname } from "path";
 import { fileURLToPath } from "url";
 //configure env
 dotenv.config();
