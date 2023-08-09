@@ -1,7 +1,6 @@
 import productModel from "../models/productModel.js";
 import categoryModel from "../models/categoryModel.js";
 import orderRazor from "../models/orderRazor.js";
-import { v4 as uuidv4 } from "uuid";
 import fs from "fs";
 import slugify from "slugify";
 import braintree from "braintree";
