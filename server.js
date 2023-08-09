@@ -8,7 +8,8 @@ import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import cartRoute from "./routes/cartRoute.js"
 import paymentRoutes from "./routes/paymentRoute.js";import cors from "cors";
-import path from 'path';
+import {path,dirname} from 'path';
+import { fileURLToPath } from "url";
 //configure env
 dotenv.config();
 
@@ -17,7 +18,8 @@ connectDB();
 
 //rest object
 const app = express();
-
+const __filename=fileURLToPath(import.meta.url);
+const __dirname=dirname(__filename);
 //middelwares
 app.use(cors());
 app.use(express.json());
@@ -32,7 +34,7 @@ app.use("/api/v1/cart",cartRoute);
 // static files
 app.use(express.static(path.join(__dirname, "./client/build")))
 
-app.get("*", (req, res) => {
+app.use("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html")); 
 });
 
